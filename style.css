@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 2rem 0;
+  font-size: 2rem;
+  padding: 0;
+  font-family: sans-serif;
+  color: #444;
+}
+
+#game {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.score {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.row,
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  border: 1px solid #bbb;
+  height: 50px;
+  width: 50px;
+  line-height: 0;
+}
+
+.win {
+  text-align: center;
+  color: #4dbd8c;
+}
