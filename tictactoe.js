@@ -147,6 +147,7 @@ class TicTacToe {
     this.board = this.createBoard()
     this.players = { x: 'x', o: 'o' }
     this.wait = 1500
+    this.waiting = false
     this.score = { x: 0, o: 0 }
     this.currentPlayer = this.players.x
 
@@ -160,7 +161,7 @@ class TicTacToe {
   clickCell = (row, col) => {
     const canContinue = this.board[row][col] === ''
 
-    if (canContinue) {
+    if (canContinue && !this.waiting) {
       this.board[row][col] = this.currentPlayer
       this.display.updateBoard(row, col, this.currentPlayer)
     }
@@ -170,14 +171,16 @@ class TicTacToe {
       .map(row => row.filter(col => col === ''))
       .filter(row => row.length > 0)
 
-    if (win) {
-      this.increaseScore()
-      this.display.updateScore(this.score, this.currentPlayer)
-      this.gameOver(this.currentPlayer)
-    } else if (stalemate.length < 1) {
-      this.gameOver()
-    } else {
-      this.switchPlayer()
+    if (!this.waiting) {
+      if (win) {
+        this.increaseScore()
+        this.display.updateScore(this.score, this.currentPlayer)
+        this.gameOver(this.currentPlayer)
+      } else if (stalemate.length < 1) {
+        this.gameOver()
+      } else {
+        this.switchPlayer()
+      }
     }
   }
 
@@ -185,10 +188,12 @@ class TicTacToe {
    * Reset the board after a delay after win or stalemate
    */
   gameOver = winner => {
+    this.waiting = true
     this.display.printMessage(winner)
 
     setTimeout(() => {
       this.resetBoard()
+      this.waiting = false
     }, this.wait)
   }
 

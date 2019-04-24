@@ -50,8 +50,13 @@ html {
   height: 100px;
   width: 100px;
   line-height: 0;
+
   border-radius: 4px;
   font-size: 40px;
+}
+
+.col:hover {
+  border: 3px solid #4d4de4;
 }
 
 .x {
@@ -63,6 +68,7 @@ html {
 }
 
 .message {
+  margin: 2rem 0;
   text-align: center;
   color: #00FF00;
 }
