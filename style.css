@@ -1,3 +1,4 @@
+/* I don't think this actually works on most devices yet...*/
 :root {
   --font-color: #FCB42A;
   --bg-color: #000022;
@@ -14,17 +15,17 @@
 }
 
 html {
-  background: var(--bg-color);
+  background: #000022;
   margin: 2rem 0;
   font-size: 16px;
   line-height: 1.5;
   padding: 0;
-  font-family: var(--font-family), sans-serif;
-  color: var(--font-color);
+  font-family: 'Press Start 2P', sans-serif;
+  color: #FCB42A;
 }
 
 #game {
-  max-width: var(--game-width);
+  max-width: 450px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -44,7 +45,7 @@ html {
 
 .col {
   cursor: pointer;
-  border: 3px solid var(--board-color);
+  border: 3px solid #2121DE;
   margin: 5px;
   height: 100px;
   width: 100px;
@@ -54,14 +55,14 @@ html {
 }
 
 .x {
-  color: var(--x-color);
+  color: #FFFF00;
 }
 
 .o {
-  color: var(--o-color);
+  color: #FFFFFF;
 }
 
 .message {
   text-align: center;
-  color: var(--message-color);
+  color: #00FF00;
 }
