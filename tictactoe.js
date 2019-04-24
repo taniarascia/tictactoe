@@ -140,7 +140,7 @@ class TicTacToe {
    * score - Holds the score for players
    * currentPlayer - Current player, initialized to x
    * gameOver - A player has won or there's a stalemate
-   * @param {class} dom - Interface for interacting with the DOM
+   * @param {class} display - User interface for interacting with the DOM
    */
   constructor(display) {
     this.display = display
