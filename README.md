@@ -1,6 +1,6 @@
-# TicTacToe.js
+# TicTacToe
 
-Tic Tac Toe in plain JavaScript.
+Tic Tac Toe in TypeScript.
 
 ## Installation
 
