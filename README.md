@@ -2,6 +2,8 @@
 
 Tic Tac Toe in plain JavaScript.
 
+## Installation
+
 ## Todos
 
 - [ ] Implement listeners on the state to trigger DOM updates

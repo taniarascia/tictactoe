@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["es2016", "dom"],
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "types": ["node"],
+    "outDir": "dist"
+  },
+  "include": ["**.ts"],
+  "exclude": ["node_modules"]
+}
