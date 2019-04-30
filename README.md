@@ -9,6 +9,8 @@ yarn
 yarn build
 ```
 
+Go to `index.html` in a browser.
+
 ## Todos
 
 - [ ] Implement listeners on the state to trigger DOM updates
