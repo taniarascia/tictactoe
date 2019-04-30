@@ -4,6 +4,11 @@ Tic Tac Toe in TypeScript.
 
 ## Installation
 
+```
+yarn
+yarn build
+```
+
 ## Todos
 
 - [ ] Implement listeners on the state to trigger DOM updates
