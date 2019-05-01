@@ -5,8 +5,9 @@
     "module": "commonjs",
     "strict": true,
     "types": ["node"],
-    "removeComments": true
+    "removeComments": true,
+    "outDir": "dist"
   },
-  "include": ["**.ts"],
+  "include": ["**.ts", "src/tictactoe.ts"],
   "exclude": ["node_modules"]
 }
