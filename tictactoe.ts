@@ -1,5 +1,5 @@
 // Custom Types
-//==================================================================================================
+//==============================================================================
 
 interface PlayerToken {
   x: string
@@ -70,18 +70,14 @@ class DOMDisplay implements Display {
    * @param {string} selector
    * @return {HTMLElement}
    */
-  getElement = (selector: string): HTMLElement => {
-    return <HTMLElement>document.querySelector(selector)
-  }
+  getElement = (selector: string): HTMLElement => <HTMLElement>document.querySelector(selector)
 
   /**
    * Retrieve all elements by selector from the DOM
    * @param {string} selector
    * @return {NodeList}
    */
-  getAllElements = (selector: string): NodeList => {
-    return <NodeList>document.querySelectorAll(selector)
-  }
+  getAllElements = (selector: string): NodeList => <NodeList>document.querySelectorAll(selector)
 
   /**
    * Create the game board view and render it to the DOM
@@ -188,7 +184,7 @@ class DOMDisplay implements Display {
 }
 
 // Model
-//==================================================================================================
+//==============================================================================
 
 class TicTacToe {
   /**
@@ -330,7 +326,7 @@ class TicTacToe {
 }
 
 // Start Game
-//==================================================================================================
+//==============================================================================
 
 const ticTacToe = new TicTacToe(new DOMDisplay())
 ticTacToe.startGame()
