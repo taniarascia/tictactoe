@@ -35,15 +35,15 @@ class DOMDisplay implements Display {
    * Bind document click to the game if clicked element is a cell
    * @param {requestCallback} clickHandler
    */
-  bindHandler(clickHandler: Function): void {
+  bindHandler(clickHandler: (row: number, col: number) => void): void {
     document.addEventListener('click', (event: Event) => {
       const clicked = <HTMLElement>event.target
       const isColumn = clicked.className === 'col'
 
       if (isColumn) {
         const cell = clicked
-        const { row } = cell.parentElement!.dataset
-        const { col } = cell.dataset
+        const row = +cell.parentElement!.dataset.row!
+        const col = +cell.dataset.col!
 
         clickHandler(row, col)
       }
@@ -156,8 +156,8 @@ class DOMDisplay implements Display {
   updateScore = (currentScore: Score, currentPlayer: string): void => {
     const currentPlayerScore = this.getElement(`#score-${currentPlayer}`)
     const player = currentPlayer === 'x' ? 'Player 1' : 'Player 2'
-
-    currentPlayerScore.textContent = `${player}: ${currentScore[currentPlayer]}`
+    const d: number = currentScore[currentPlayer]
+    currentPlayerScore.textContent = `${player}: ${d}`
   }
 
   /**
@@ -217,8 +217,8 @@ class TicTacToe {
   }
 
   /**
-   * Click a cell in the game board and determine if its a win, a stalemate, or the game continues.
-   * Game over or switch player.
+   * Click a cell in the game board and determine if its a win, a stalemate, or
+   * the game continues. Game over or switch player.
    */
   clickCell = (row: number, col: number) => {
     const canContinue = this.board[row][col] === ''

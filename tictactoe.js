@@ -10,12 +10,8 @@ var DOMDisplay = (function () {
                 element.dataset[dataset[0]] = dataset[1];
             return element;
         };
-        this.getElement = function (selector) {
-            return document.querySelector(selector);
-        };
-        this.getAllElements = function (selector) {
-            return document.querySelectorAll(selector);
-        };
+        this.getElement = function (selector) { return document.querySelector(selector); };
+        this.getAllElements = function (selector) { return document.querySelectorAll(selector); };
         this.printGameBoard = function (boardData) {
             var game = _this.getElement('#game');
             var gameBoard = _this.createElement('div', 'board', undefined);
@@ -57,7 +53,8 @@ var DOMDisplay = (function () {
         this.updateScore = function (currentScore, currentPlayer) {
             var currentPlayerScore = _this.getElement("#score-" + currentPlayer);
             var player = currentPlayer === 'x' ? 'Player 1' : 'Player 2';
-            currentPlayerScore.textContent = player + ": " + currentScore[currentPlayer];
+            var d = currentScore[currentPlayer];
+            currentPlayerScore.textContent = player + ": " + d;
         };
         this.printMessage = function (winner) {
             var message = _this.createElement('div', 'message');
@@ -77,8 +74,8 @@ var DOMDisplay = (function () {
             var isColumn = clicked.className === 'col';
             if (isColumn) {
                 var cell = clicked;
-                var row = cell.parentElement.dataset.row;
-                var col = cell.dataset.col;
+                var row = +cell.parentElement.dataset.row;
+                var col = +cell.dataset.col;
                 clickHandler(row, col);
             }
         });
