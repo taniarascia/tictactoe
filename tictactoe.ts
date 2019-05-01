@@ -35,14 +35,14 @@ class DOMDisplay implements Display {
    * Bind document click to the game if clicked element is a cell
    * @param {requestCallback} clickHandler
    */
-  bindHandler(clickHandler: Function) {
+  bindHandler(clickHandler: Function): void {
     document.addEventListener('click', (event: Event) => {
       const clicked = <HTMLElement>event.target
       const isColumn = clicked.className === 'col'
 
       if (isColumn) {
         const cell = clicked
-        const { row } = cell.parentElement.dataset
+        const { row } = cell.parentElement!.dataset
         const { col } = cell.dataset
 
         clickHandler(row, col)
