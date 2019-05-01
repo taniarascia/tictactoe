@@ -5,7 +5,7 @@
     "module": "commonjs",
     "strict": true,
     "types": ["node"],
-    "outDir": "dist"
+    "removeComments": true
   },
   "include": ["**.ts"],
   "exclude": ["node_modules"]
