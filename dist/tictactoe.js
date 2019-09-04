@@ -90,22 +90,22 @@ var TicTacToe = (function () {
             if (canContinue && !_this.waiting) {
                 _this.board[row][col] = _this.currentPlayer;
                 _this.display.updateBoard(row, col, _this.currentPlayer);
-            }
-            var win = _this.isGameWon(row, col);
-            var stalemate = _this.board
-                .map(function (row) { return row.filter(function (col) { return col === ''; }); })
-                .filter(function (row) { return row.length > 0; });
-            if (!_this.waiting) {
-                if (win) {
-                    _this.increaseScore();
-                    _this.display.updateScore(_this.score, _this.currentPlayer);
-                    _this.gameOver(_this.currentPlayer);
-                }
-                else if (stalemate.length < 1) {
-                    _this.gameOver();
-                }
-                else {
-                    _this.switchPlayer();
+                var win = _this.isGameWon(row, col);
+                var stalemate = _this.board
+                    .map(function (row) { return row.filter(function (col) { return col === ''; }); })
+                    .filter(function (row) { return row.length > 0; });
+                if (!_this.waiting) {
+                    if (win) {
+                        _this.increaseScore();
+                        _this.display.updateScore(_this.score, _this.currentPlayer);
+                        _this.gameOver(_this.currentPlayer);
+                    }
+                    else if (stalemate.length < 1) {
+                        _this.gameOver();
+                    }
+                    else {
+                        _this.switchPlayer();
+                    }
                 }
             }
         };

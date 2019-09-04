@@ -226,22 +226,22 @@ class TicTacToe {
     if (canContinue && !this.waiting) {
       this.board[row][col] = this.currentPlayer
       this.display.updateBoard(row, col, this.currentPlayer)
-    }
 
-    const win = this.isGameWon(row, col)
-    const stalemate = this.board
-      .map(row => row.filter(col => col === ''))
-      .filter(row => row.length > 0)
+      const win = this.isGameWon(row, col)
+      const stalemate = this.board
+        .map(row => row.filter(col => col === ''))
+        .filter(row => row.length > 0)
 
-    if (!this.waiting) {
-      if (win) {
-        this.increaseScore()
-        this.display.updateScore(this.score, this.currentPlayer)
-        this.gameOver(this.currentPlayer)
-      } else if (stalemate.length < 1) {
-        this.gameOver()
-      } else {
-        this.switchPlayer()
+      if (!this.waiting) {
+        if (win) {
+          this.increaseScore()
+          this.display.updateScore(this.score, this.currentPlayer)
+          this.gameOver(this.currentPlayer)
+        } else if (stalemate.length < 1) {
+          this.gameOver()
+        } else {
+          this.switchPlayer()
+        }
       }
     }
   }
