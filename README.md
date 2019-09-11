@@ -1,21 +1,20 @@
 # TicTacToe
 
-Tic Tac Toe in TypeScript.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+Simple Tic Tac Toe implementation in TypeScript.
+
+### [View demo](src/validation.ts)
 
 ## Installation
 
 ```bash
-yarn
-yarn build # to compile TypeScript 
-yarn watch # to set a TypeScript watch
+npm i
+npm run build # to compile TypeScript
+npm run watch # to set a TypeScript watch
 ```
 
 Go to `index.html` in a browser.
-
-## Todos
-
-- [x] Convert to TypeScript
-- [ ] Implement listeners on the state to trigger DOM updates
 
 ## Author
 
