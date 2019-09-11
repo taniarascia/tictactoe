@@ -4,7 +4,7 @@
   "description": "Tic Tac Toe in TypeScript.",
   "author": {
     "name": "Tania Rascia",
-    "email": "me@taniarascia.com",
+    "email": "tania@taniarascia.com",
     "url": "https://www.taniarascia.com"
   },
   "main": "dist/tictactoe.js",
