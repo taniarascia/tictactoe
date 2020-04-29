@@ -4,7 +4,7 @@
 
 Simple Tic Tac Toe implementation in TypeScript.
 
-### [View demo](src/validation.ts)
+### [View demo](https://taniarascia.github.io/tictactoe)
 
 ## Installation
 
